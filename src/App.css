@@ -1,0 +1,7 @@
+.noise-bg {
+    background: transparent url('/images/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    /* opacity: 0.9; */
+    width: 100%;
+    height:100%
+}

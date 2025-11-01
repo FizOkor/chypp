@@ -11,9 +11,9 @@ const ChatDetail = () => {
   };
 
   return (
-    <div className={`text-popover-foreground overflow-y-auto`}>
-      <div className="flex flex-col  p-2 lg:p-4">
-        <div className="flex items-center justify-start opacity-100 lg:opacity-0 lg:hidden transition duration-400 ease-in-out delay-200">
+    <div className={`flex flex-col h-full text-popover-foreground overflow-y-auto`}>
+      <div className="p-2 lg:p-4 flex flex-col flex-1">
+        <div className="flex items-center p-4 justify-start opacity-100 lg:opacity-0 lg:hidden transition duration-400 ease-in-out delay-200">
           <button
             onClick={triggerBtnClick}
             className="transition duration-400 ease-in-out delay-200"
@@ -22,12 +22,12 @@ const ChatDetail = () => {
           </button>
         </div>
 
-        <div className="flex flex-col flex-1 items-center relative w-full">
-          <div className="flex-1 overflow-y-auto p-4 w-full">
+        <div className="flex flex-col flex-1 p-4 items-center relative w-full">
+          <div className="flex-1 overflow-y-auto p-5 w-full">
             
           </div>
           
-          <div className="fixed bottom-0 bg-white flex p-2 mb-4 rounded-xl">
+          <div className="bg-white flex w-full p-2 rounded-xl">
             <button className="w-fit p-2">
               <SmilePlus />
             </button>

@@ -63,9 +63,9 @@ export default function ChatPage() {
     >
       {/* The chat list panel */}
       <div
-        className={`w-[50%] shrink-0 lg:w-1/3 p-4`}
+        className={`shrink-0 lg:w-1/3 p-4`}
         style={{
-          width: isMobile ? `calc(50% - ${menuPanelWidth}px)` : undefined,
+          width: isMobile ? `calc(50% - ${menuPanelWidth}px)` : '',
         }}
       >
         <h2 className="text-xl font-semibold mb-3 p-4">Chats</h2>
@@ -93,9 +93,9 @@ export default function ChatPage() {
       <ContextPanel
         className={`bg-input ${
           isMobile ? "" : "flex-1 lg:w-2/3"
-        } overflow-y-auto noise-bg border-black border-5`}
+        } overflow-y-auto noise-bg`}
         style={{
-          width: isMobile ? `calc(50% + ${menuPanelWidth}px)` : '',
+          width: isMobile ? `calc(50%)` : '',
         }}
       >
         <Outlet />

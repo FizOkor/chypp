@@ -3,7 +3,6 @@ import { useUIStore } from "@/store/uiStore";
 import { useEffect, useState } from "react";
 import ContextPanel from "@/components/app/ContentPanel";
 import useWindowSize from "@/hooks/useWindowSize";
-import { useMenuPanel } from "@/context/MenuPanelContext";
 
 interface Chat {
   id: string;
@@ -27,7 +26,6 @@ export default function ChatPage() {
     mobileBackBtnClicked,
     setMobileBackBtnClicked,
   } = useUIStore();
-  const { menuPanelWidth } = useMenuPanel();
   const [isChatSelected, setIsChatSelected] = useState(false);
 
   const handleChatClick = (chat: Chat) => {
@@ -48,24 +46,20 @@ export default function ChatPage() {
   }, [mobileBackBtnClicked]);
 
   const slide = `transition-transform duration-500 ease-in-out ${
-    isMobile && isChatSelected ? "-translate-x-1/2" : "translate-x-0"
+    isMobile && isChatSelected ? "-translate-x-[calc(100vw)]" : "translate-x-0"
   }`;
 
-  const mobileWidthClass = isMobile
-    ? `calc(200% + ${menuPanelWidth}px + ${menuPanelWidth}px)`
-    : "100%";
 
   return (
     <div
       id="chat-page"
-      className={`relative flex h-full bg-card rounded-tl-lg ${slide}`}
-      style={{ width: mobileWidthClass }}
+      className={`relative flex h-full bg-card rounded-tl-lg ${slide} w-full`}
     >
       {/* The chat list panel */}
       <div
         className={`shrink-0 lg:w-1/3 p-4`}
         style={{
-          width: isMobile ? `calc(50% - ${menuPanelWidth}px)` : '',
+          width: isMobile ? `calc(100vw - var(--menu-width))` : '',
         }}
       >
         <h2 className="text-xl font-semibold mb-3 p-4">Chats</h2>
@@ -95,7 +89,7 @@ export default function ChatPage() {
           isMobile ? "" : "flex-1 lg:w-2/3"
         } overflow-y-auto noise-bg`}
         style={{
-          width: isMobile ? `calc(50%)` : '',
+          width: isMobile ? `calc(100vw)` : '',
         }}
       >
         <Outlet />

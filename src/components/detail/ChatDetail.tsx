@@ -27,11 +27,11 @@ const ChatDetail = () => {
             
           </div>
           
-          <div className="bg-white flex w-full p-2 rounded-xl">
+          <div className="bg-white flex w-full p-2 gap-2 rounded-xl">
             <button className="w-fit p-2">
               <SmilePlus />
             </button>
-            <input className="flex-1" />
+            <input className="flex-1 flex items-center justify-center focus:border-none  focus:outline-none" />
             <button className="w-fit p-2">
               <SendHorizonal />
             </button>

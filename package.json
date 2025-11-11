@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./src/server/main.ts",
   "scripts": {
+    "start": "pnpm run build && node dist/server/main.js",
     "dev": "nodemon --exec tsx src/server/main.ts -w src/server",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

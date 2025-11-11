@@ -6,6 +6,8 @@ import { createServer } from 'http'
 export const app = express()
 export const server = createServer(app);
 
+const port: string = process.env.PORT || '3000';
+
 if (process.env.NODE_ENV !== "production") {
   app.use(express.static("src/client/assets"));
 }
@@ -13,5 +15,5 @@ if (process.env.NODE_ENV !== "production") {
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
-server.listen(3000, () => console.log("Server is lisening on port 3000..."))
+server.listen( port, () => console.log("Server is lisening on port 3000..."))
 ViteExpress.bind(app, server)

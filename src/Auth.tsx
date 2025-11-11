@@ -10,7 +10,7 @@ export default function Auth() {
 
   return (
     <div className='h-screen flex flex-col items-center justify-center'>
-      <h2>React Google Loginn</h2>
+      <h2>React Google Login</h2>
       <br />
       <br />
       <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />

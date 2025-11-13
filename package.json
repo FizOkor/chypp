@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --exec tsx src/server/main.ts -w src/server",
     "build": "vite build && echo 'After vite build:' && ls dist && pnpm exec tsc -p tsconfig.server.json && echo 'After tsc:' && ls dist && ls dist/server",    
-    "postinstall": "pnpm run build",
+    "postinstall": "pnpm install && pnpm run build",
     "start": "ls -R dist && node dist/server/main.js",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,7 +17,6 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-oauth/google": "^0.12.2",
-    "@tailwindcss/vite": "^4.1.14",
     "axios": "^1.13.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

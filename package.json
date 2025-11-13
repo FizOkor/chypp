@@ -6,8 +6,8 @@
   "main": "./src/server/main.ts",
   "scripts": {
     "dev": "nodemon --exec tsx src/server/main.ts -w src/server",
-    "build": "vite build && pnpm exec tsc -p tsconfig.server.json",
-    "start": "node dist/server/main.js",
+    "build": "vite build && echo 'After vite build:' && ls dist && pnpm exec tsc -p tsconfig.server.json && echo 'After tsc:' && ls dist && ls dist/server",
+    "start": "ls -R dist && node dist/server/main.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -11,10 +11,7 @@ export default defineConfig({
     emptyOutDir: true,
     assetsDir: "assets",
   },
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

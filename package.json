@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --exec tsx src/server/main.ts -w src/server",
     "build": "vite build && echo 'After vite build:' && ls dist && pnpm exec tsc -p tsconfig.server.json && echo 'After tsc:' && ls dist && ls dist/server",    
-    "postinstall": "pnpm install && pnpm run build",
+    "postinstall": "pnpm run build",
     "start": "ls -R dist && node dist/server/main.js",
     "lint": "eslint .",
     "preview": "vite preview"
